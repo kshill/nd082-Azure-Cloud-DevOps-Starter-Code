@@ -1,0 +1,61 @@
+[
+  {
+    "description": "This is the default set of policies monitored by Azure Security Center. It was automatically assigned as part of onboarding to Security Center. The default assignment contains only audit policies. For more information please visit https://aka.ms/ascpolicies",
+    "displayName": "ASC Default (subscription: 985b6eb4-c0de-46bd-8292-8d0cb3eb829a)",
+    "enforcementMode": "Default",
+    "id": "/subscriptions/985b6eb4-c0de-46bd-8292-8d0cb3eb829a/providers/Microsoft.Authorization/policyAssignments/SecurityCenterBuiltIn",
+    "identity": null,
+    "location": null,
+    "metadata": {
+      "assignedBy": "Security Center",
+      "createdBy": "affa52a7-5162-4f25-bc40-9c1706a4ad02",
+      "createdOn": "2021-01-29T12:58:46.5685945Z",
+      "excludedOutOfTheBoxStandards": [
+        "PCI DSS 3.2.1",
+        "ISO 27001",
+        "SOC TSP"
+      ],
+      "updatedBy": null,
+      "updatedOn": null
+    },
+    "name": "SecurityCenterBuiltIn",
+    "notScopes": null,
+    "parameters": {},
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8",
+    "scope": "/subscriptions/985b6eb4-c0de-46bd-8292-8d0cb3eb829a",
+    "sku": {
+      "name": "A1",
+      "tier": "Standard"
+    },
+    "type": "Microsoft.Authorization/policyAssignments"
+  },
+  {
+    "description": "Denies the creation of resources that do not have a tag.",
+    "displayName": "Deny Resource Creation That Do Not Have Tags",
+    "enforcementMode": "Default",
+    "id": "/subscriptions/985b6eb4-c0de-46bd-8292-8d0cb3eb829a/providers/Microsoft.Authorization/policyAssignments/tagging-policy-assignment",
+    "identity": null,
+    "location": null,
+    "metadata": {
+      "category": "Tags",
+      "createdBy": "c5189cd1-188a-4400-875f-849aa849cd7e",
+      "createdOn": "2021-01-29T17:47:48.1584442Z",
+      "updatedBy": null,
+      "updatedOn": null
+    },
+    "name": "tagging-policy-assignment",
+    "notScopes": null,
+    "parameters": {
+      "tagName": {
+        "value": "Environment"
+      }
+    },
+    "policyDefinitionId": "/subscriptions/985b6eb4-c0de-46bd-8292-8d0cb3eb829a/providers/Microsoft.Authorization/policyDefinitions/tagging-policy",
+    "scope": "/subscriptions/985b6eb4-c0de-46bd-8292-8d0cb3eb829a",
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments"
+  }
+]
