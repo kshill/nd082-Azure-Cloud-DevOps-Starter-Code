@@ -9,6 +9,7 @@
 *.plan
 *.lock.hcl
 
+
 *.terraform.lock.hcl
 
 # Crash log files
