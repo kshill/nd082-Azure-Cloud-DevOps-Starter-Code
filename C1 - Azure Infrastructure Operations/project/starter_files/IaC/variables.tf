@@ -16,12 +16,20 @@ variable "clientsecret" {}
 
 variable "tenantid" {}
 
+variable "admin_username" {}
+
+variable "admin_password" {}
+
 variable "cust_scope" {
     default = "/subscriptions/"
 }
 
 variable "packerRG" {
     default = "packer-rg"
+}
+
+variable "instance_count" {
+  default = 1
 }
 
 variable "packerImageName" {

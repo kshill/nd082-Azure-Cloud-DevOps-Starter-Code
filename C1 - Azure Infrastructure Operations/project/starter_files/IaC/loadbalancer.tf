@@ -42,7 +42,7 @@ resource "azurerm_lb_backend_address_pool" "udacity_lb_bap_outbound" {
 resource "azurerm_lb_probe" "udacity_lb_probe" {
   resource_group_name = azurerm_resource_group.main_rg.name
   loadbalancer_id     = azurerm_lb.udacity_lb.id
-  name                = "http-probe"
+  name                = "http-inbound-probe"
   port                = 80
 }
 
@@ -65,9 +65,13 @@ resource "azurerm_lb_outbound_rule" "udacity_lb_outbound_rule" {
   resource_group_name            = azurerm_resource_group.main_rg.name
   loadbalancer_id                = azurerm_lb.udacity_lb.id
   name                           = "Udacity_LB_Outbound_Rule"
-  protocol                       = "All"
+  protocol                       = "Tcp"
+  
+  backend_address_pool_id = azurerm_lb_backend_address_pool.udacity_lb_bap_outbound.id
+
   frontend_ip_configuration {
     name = "Outbound"
+    
   }
-  backend_address_pool_id = azurerm_lb_backend_address_pool.udacity_lb_bap_outbound.id
+  
 }

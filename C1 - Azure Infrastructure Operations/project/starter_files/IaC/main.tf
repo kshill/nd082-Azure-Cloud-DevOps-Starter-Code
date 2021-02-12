@@ -14,11 +14,12 @@ resource "azurerm_linux_virtual_machine_scale_set" "main" {
   name                            = "${var.prefix}-vm"
   resource_group_name             = azurerm_resource_group.main_rg.name
   location                        = azurerm_resource_group.main_rg.location
-  instances                       = 1
+  instances                       = var.instance_count
   sku                             = "Standard_D2s_v3"
-  admin_username                  = "ksadmin"
-  admin_password                  = "P@ssw0rd1234!"
+  admin_username                  = var.admin_username
+  admin_password                  = var.admin_password
   disable_password_authentication = false
+
 
   source_image_id = data.azurerm_image.ubuntu_image_packer.id
   
@@ -55,18 +56,3 @@ resource "azurerm_linux_virtual_machine_scale_set" "main" {
   )
 }
 
-resource "azurerm_availability_set" "udacity_av_set" {
-  name = "${var.prefix}-av-set"
-  location = azurerm_resource_group.main_rg.location
-  resource_group_name = azurerm_resource_group.main_rg.name
-  platform_fault_domain_count = 2
-  platform_update_domain_count = 2
-
-  tags = merge (
-      local.common_tags,
-      map(
-        "Contact", "Kita Shillingford"
-      )
-  )
-
-}
