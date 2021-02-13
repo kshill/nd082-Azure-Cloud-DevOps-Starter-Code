@@ -1,3 +1,0 @@
-# az policy definition create --name <Name> --rule policy.json
-# az policy assignment create --policy <policy name>
-# Will apply to entire subscription
